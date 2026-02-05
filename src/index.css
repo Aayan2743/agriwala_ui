@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Agriculture-inspired warm palette */
+    --background: 40 30% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 25% 98%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 25% 98%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Deep Forest Green */
+    --primary: 90 60% 22%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Warm Earth */
+    --secondary: 30 25% 90%;
+    --secondary-foreground: 30 10% 20%;
+
+    /* Muted sage */
+    --muted: 80 15% 90%;
+    --muted-foreground: 30 10% 40%;
+
+    /* Golden Harvest */
+    --accent: 42 85% 55%;
+    --accent-foreground: 30 10% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 90 60% 22%;
+
+    --radius: 0.75rem;
+
+    /* Custom Agriculture Colors */
+    --earth: 25 40% 35%;
+    --earth-foreground: 40 30% 97%;
+    --leaf: 120 40% 35%;
+    --leaf-foreground: 40 30% 97%;
+    --harvest: 42 85% 55%;
+    --harvest-foreground: 30 10% 15%;
+    --cream: 40 30% 95%;
+    --soil: 25 30% 20%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(90 60% 22%) 0%, hsl(120 40% 30%) 50%, hsl(90 50% 25%) 100%);
+    --gradient-earth: linear-gradient(180deg, hsl(40 30% 97%) 0%, hsl(40 25% 92%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(40 25% 99%) 0%, hsl(40 20% 96%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(42 85% 55%) 0%, hsl(35 80% 50%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(30 10% 15% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(30 10% 15% / 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsl(30 10% 15% / 0.15);
+
+    --sidebar-background: 40 25% 98%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 90 60% 22%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 80 20% 92%;
+    --sidebar-accent-foreground: 30 10% 20%;
+    --sidebar-border: 40 20% 88%;
+    --sidebar-ring: 90 60% 22%;
+  }
+
+  .dark {
+    --background: 30 15% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 30 15% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 30 15% 10%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 90 50% 45%;
+    --primary-foreground: 30 15% 8%;
+
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 30 10% 20%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 42 75% 50%;
+    --accent-foreground: 30 15% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 20%;
+    --input: 30 15% 20%;
+    --ring: 90 50% 45%;
+
+    --earth: 25 35% 45%;
+    --leaf: 120 35% 45%;
+    --harvest: 42 75% 50%;
+    --cream: 30 15% 15%;
+    --soil: 25 20% 60%;
+
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 90 50% 45%;
+    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 30 15% 20%;
+    --sidebar-ring: 90 50% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 shadow-[var(--shadow-card)];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-leaf to-primary bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-elevated)];
+  }
+
+  /* Status colors using semantic tokens */
+  .status-success {
+    @apply bg-green-100 text-green-700;
+  }
+
+  .status-warning {
+    @apply bg-amber-100 text-amber-700;
+  }
+
+  .status-error {
+    @apply bg-red-100 text-red-700;
+  }
+
+  .status-info {
+    @apply bg-blue-100 text-blue-700;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+}
