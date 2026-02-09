@@ -5,6 +5,7 @@ import { Menu, X, Leaf, User, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { useCart } from "@/contexts/CartContext";
+import Logo from "../../assets/KhetiBharath.png"
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -55,9 +56,9 @@ export const Navbar = () => {
           {/* Logo */}
 <Link to="/" className="flex items-center gap-3">
   <img
-    src="/logo.png"   // your dark logo
-    alt="Agri Valah Logo"
-    className="h-12 md:h-14 lg:h-14 w-auto object-contain"
+    src={Logo} 
+    alt="AgriValah"
+    className="h-12 w-auto object-contain"
   />
 </Link>
 

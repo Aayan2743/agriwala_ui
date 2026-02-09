@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Leaf, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import Logo from "../../assets/KhetiBharath.png"
 
 const footerLinks = {
   quickLinks: [
@@ -34,14 +35,13 @@ export const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 ">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center">
-                <Leaf className="w-6 h-6" />
-              </div>
-              <span className="font-display text-2xl font-semibold">
-                AgriValah
-              </span>
+             <img
+    src={Logo}   // put logo inside public folder
+    alt="AgriValah"
+    className="h-12 w-auto object-contain bg-white"
+  />
             </Link>
             <p className="text-primary-foreground/80 mb-6 max-w-sm leading-relaxed">
               Connecting farmers directly to families. Fresh, organic produce delivered 

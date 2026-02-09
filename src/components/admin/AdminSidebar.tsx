@@ -5,6 +5,7 @@
  } from "lucide-react";
  import { Button } from "@/components/ui/button";
  import { useAuth } from "@/contexts/AuthContext";
+ import Logo from "../../assets/KhetiBharath.png"
  
  const sidebarLinks = [
    { name: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
@@ -42,13 +43,11 @@
            {/* Logo */}
            <div className="p-6 border-b border-primary-foreground/20">
              <Link to="/" className="flex items-center gap-2">
-               <div className="w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center">
-                 <Leaf className="w-6 h-6" />
-               </div>
-               <div>
-                 <span className="font-display text-xl font-semibold">AgriValah</span>
-                 <p className="text-xs text-primary-foreground/70">Admin Panel</p>
-               </div>
+                 <img
+    src={Logo} 
+    alt="AgriValah"
+    className="h-12 w-auto object-contain"
+  />
              </Link>
            </div>
  
